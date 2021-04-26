@@ -1,0 +1,25 @@
+.td-header-wrap {
+    .td-header-top-menu-full {
+        padding: 5px 0;
+    }
+
+    .td-header-menu-wrap-full {
+        border-top: solid 1px #f3f3f3;
+    }
+}
+
+.td-main-menu-logo {
+    img {
+        max-height: 60px !important;
+    }
+}
+
+@media (max-width: 1140px) {
+    .td-main-menu-logo {
+        img {
+            max-width: 140px !important;
+        }
+    }
+}
+
+;

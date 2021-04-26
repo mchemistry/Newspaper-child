@@ -1,0 +1,34 @@
+.more-share {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(mores, 1));
+    width: 6px;
+    height: 6px;
+    background: $default-socials-text-color;
+    border-radius: 100px;
+    box-shadow: 10px -6px 0, 10px 6px 0;
+}
+
+.more-share::after,
+.more-share::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    border-radius: 3px;
+    width: 10px;
+    height: 2px;
+    background: $default-socials-text-color;
+    left: 2px;
+}
+
+.more-share::before {
+    top: 0;
+    transform: rotate(-35deg);
+}
+
+.more-share::after {
+    bottom: 0;
+    transform: rotate(35deg);
+}

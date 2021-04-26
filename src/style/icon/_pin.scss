@@ -1,0 +1,29 @@
+//location
+.pin {
+  box-sizing: border-box;
+  position: relative;
+  background: #D50000;
+  display: block;
+  transform: rotate(45deg);
+  width: 18px;
+  color: #fff;
+  height: 18px;
+  border-radius: 100% 100% 0 100%;
+  border: 2px solid;
+  margin-top: -4px;
+  &::before {
+    content: "";
+    display: block;
+    color: #fff;
+    background: #D50000;
+    box-sizing: border-box;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid;
+    top: 3px;
+    left: 3px;
+    border-radius: 40px;
+  }    
+//email
+}

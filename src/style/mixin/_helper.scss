@@ -1,0 +1,39 @@
+@mixin flex-center($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin full-viewport{
+    height: 100vh;
+    width: 100vw;
+}
+
+@mixin center($position, $direction){
+    position: $position;
+    @if $direction == "y" { //vertical
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @else if $direction == "x" {
+        left: 50%;
+        transform: translateX(-50%);
+    } //horizontal
+    @else {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+@mixin rounded($pixel) {
+    border-radius: $pixel;
+}
+
+
+@mixin text-linear($deg, $color1, $color2){
+	background: linear-gradient($deg, $color1, $color2);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

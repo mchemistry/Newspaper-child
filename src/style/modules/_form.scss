@@ -1,0 +1,254 @@
+/**************************************
+    ******** FORM DECLARE ********
+        *********************************/
+form[form-benzene] {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+
+    // background: $primary
+    input,
+    textarea {
+        &:focus {
+            outline: none;
+        }
+
+        &:disabled {
+            background: #2f2641b4 !important;
+            cursor: not-allowed;
+        }
+
+        &:disabled::placeholder {
+            color: #cccccc;
+        }
+
+        &::placeholder {
+            color: #cccccc;
+        }
+    }
+
+    input {
+        height: 2.5rem;
+        border: none;
+        font-size: 14px;
+        border-radius: $default-border-radius;
+        background: #a386ddab;
+        margin-bottom: 0;
+        color: #fff;
+        padding: 0 0.75rem;
+
+        &[type='number']::-webkit-outer-spin-button,
+        &[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        &[type='number'] {
+            -moz-appearance: textfield;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            background: #a386ddab;
+        }
+    }
+
+    label {
+        margin: 0.75rem 0 0.25rem 0.25rem;
+        font-size: 0.825rem;
+        color: white;
+
+        &:nth-child(1) {
+            margin-top: 0 !important;
+        }
+
+        span {
+            color: #fc4545;
+            font-weight: bold;
+        }
+    }
+
+    textarea {
+        height: 100px;
+        border-radius: $default-border-radius;
+        margin-bottom: 12px;
+        border: none;
+        background: #a386ddab;
+        color: #fff;
+        resize: none;
+        min-height: 120px;
+        padding: 0.5rem 0.75rem;
+    }
+
+    span {
+        color: #2dd5ff;
+        font-size: 10px;
+    }
+
+    button[type="submit"] {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        height: 2.25rem;
+        width: 10rem;
+        border-radius: $default-border-radius;
+        margin: 0 auto;
+        margin-top: 1rem;
+        background: #fd6620;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        transition: background 0.3s;
+
+        &:hover {
+            background: #e94a00;
+        }
+
+        &:disabled {
+            background: #2f2641b4;
+            cursor: not-allowed;
+        }
+
+        span {
+            color: #fff;
+            font-size: 0.875rem;
+
+            &[loading-spiner] {
+                display: none;
+            }
+
+            svg {
+
+                path,
+                rect {
+                    fill: #ff5100;
+                }
+            }
+        }
+    }
+}
+
+/**************************************
+              ********END FORM ********
+                  *********************************/
+
+/**************************************
+              ******** FOOTER THEME OVERRIDE ********
+                  *********************************/
+form[form-benzene].footer-form {
+    padding: 0;
+}
+
+form[form-benzene].footer-logo-copyright {
+    padding: 0;
+}
+
+form[form-benzene].footer-bottom__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+/**************************************
+              ******** END FOOTER THEME OVERRIDE ********
+                  *********************************/
+
+
+/**************************************
+              ******** CONTACT FORM OVERRIDE ********
+                  *********************************/
+form[form-benzene].contact-form {
+    background-color: transparent;
+
+    span {
+        color: #005dbf;
+        font-size: 16px;
+    }
+
+    button {
+        span {
+            color: #fff;
+        }
+    }
+
+    input {
+        height: 2.5rem;
+        max-width: 100%;
+        background: #040044ab;
+        font-size: 15px;
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            background: #040044ab;
+        }
+    }
+
+    label {
+        color: $primary;
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    textarea {
+        background: #040044ab;
+        font-size: 15px;
+    }
+
+    input,
+    textarea {
+        &:disabled {
+            background: #08080eab;
+        }
+    }
+}
+
+/**************************************
+              ******** END CONTACT FORM OVERRIDE ********
+                  *********************************/
+
+/**************************************
+              ******** PRICE POPUP FORM OVERRIDE ********
+                  *********************************/
+form[form-benzene].pop-up-form {
+    position: relative;
+    width: auto;
+
+    p.form-one-step {
+        text-align: center;
+        font-size: 17px;
+        font-weight: 600;
+        @include text-linear($deg: 45deg, $color1: #6f0202, $color2: #0b12ef);
+    }
+
+    input {
+        background: #f0e8ffab;
+        color: #4e3283;
+        font-weight: 500;
+        font-size: 15px;
+
+        &::placeholder {
+            color: #948f9e;
+        }
+    }
+
+    label {
+        font-size: 16px;
+        // &:not(:nth-child(1))
+        margin-top: 1.5rem;
+    }
+
+    button[type='submit'] {
+        height: 2.5rem;
+        margin-top: 2.5rem;
+
+        span {
+            font-size: 15px;
+        }
+    }
+}
