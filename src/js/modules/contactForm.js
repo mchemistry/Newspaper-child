@@ -69,7 +69,7 @@ export default class Form {
         let isValid = true;
         $(`.${this.elementPrefixId}-form :input[type="text"]`).each(function () {
             if ($(this).val() === '') {
-                APP.ERROR_MESSAGE = 'Thông tịn không được để trống.';
+                APP.ERROR_MESSAGE = 'Thông tin không được để trống.';
                 isValid = false;
             }
         });

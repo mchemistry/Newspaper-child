@@ -4,6 +4,7 @@ import Form from './modules/contactForm';
 import ShareSocials from './modules/shareSocials';
 import PopUpAds from './modules/ads';
 import appendMaps from './utils/appendMaps';
+import initAccordion from './modules/accordion';
 
 listenDOMLoaded(() => {
     const popupForm = new Form('pop-up');
@@ -18,7 +19,11 @@ listenDOMLoaded(() => {
     const pricePopUpAds = new PopUpAds('price');
     pricePopUpAds.init();
 
+    // append map to body
     appendMaps();
+
+    // init accordion
+    initAccordion();
 });
 
 // eslint-disable-next-line no-undef

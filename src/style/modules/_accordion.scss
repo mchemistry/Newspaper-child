@@ -1,0 +1,73 @@
+.accordion {
+    box-sizing: border-box;
+    box-shadow: $accordion-box-shadow;
+    border-radius: 0.25rem;
+    border-top: $accordion-border-active;
+    overflow: hidden;
+    margin-top: 12px;
+    height: auto;
+    & * {
+        box-sizing: border-box;
+        transition: all 0.3s;
+    }
+    &:nth-last-child(1) {
+        margin-bottom: 12px;
+    }
+    &-title {
+        min-height: 42px;
+        padding: 10px 12px;
+        position: relative;
+        font-size: $accordion-title-font-size !important;
+        color: $accordion-text-color !important;
+        font-weight: 600;
+        margin: 0 !important;
+        cursor: pointer;
+        &::after, &::before {
+            position: absolute;
+            transition: all 0.3s;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            content: '';
+            display: inline-block;
+            background-color: $accordion-text-color;
+            border-radius: 4px;
+        }
+        &::before {
+            height: 14px;
+            width: 2px;
+        }
+        &::after {
+            height: 2px;
+            width: 14px;
+            right: 10px;
+        }
+    }
+
+    &-content {
+        font-size: $accordion-text-font-size;
+        padding: 0 0.85rem;
+        height: 0;
+    }
+
+}
+
+.accordion.active-accordion {
+    height: auto;
+    transition: all 0.3s ease-in;
+    .accordion-title {
+        border-bottom: $accordion-border-active;
+        color: $accordion-title-color-active !important;
+        &::after {
+            transform: translateY(-50%) translateX(16px);
+            opacity: 0;
+        }
+        &::before {
+            transform: translateY(-50%) rotate(90deg);
+        }
+    }
+    .accordion-content {
+        height: auto;
+        padding: 0.85rem;
+    }
+}
