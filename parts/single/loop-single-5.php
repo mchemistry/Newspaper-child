@@ -34,6 +34,20 @@ if (have_posts()) {
 
         </div>
 
+        <!-- CUSTOM SHARE SOCIALS -->
+        <div id="share-socials-container">
+            <div class="share-socials share-facebook">
+                <span><i class="icon-facebook"></i></span><span class="text">Chia sẻ</span>
+            </div>
+            <div class="share-socials share-zalo zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="1" data-color="blue" data-customize="true">
+                <span class="zalo">Zalo</span><span class="text">Chia sẻ</span>
+            </div>
+            <div class="share-socials share-more">
+                <span> <i class="more-share"></i> </span><span>Nhiều hơn</span>
+            </div>
+        </div>
+        <!-- END CUSTOM SHARE SOCIALS -->
+
         <?php echo $td_mod_single->get_social_sharing_top();?>
 
 

@@ -7,6 +7,14 @@ Author URI: 	http://themeforest.net/user/tagDiv/portfolio
 Template:       Newspaper
 Version:        9.0c
 */
+.post footer {
+  margin-top: 16px;
+}
+
+.td-block-row.td-post-next-prev {
+  margin-top: 16px;
+}
+
 @media (min-width: 768px) and (max-width: 1018px) {
   .td-header-style-7 .sf-menu li {
     display: none !important;
@@ -904,6 +912,8 @@ Version:        9.0c
 .single.single-post .td-main-content .td-post-title .entry-title {
   font-size: 28px;
   line-height: 1.42857143;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
 .single.single-post .td-main-content .td-module-meta-info {

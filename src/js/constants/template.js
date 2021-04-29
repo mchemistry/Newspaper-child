@@ -1,22 +1,4 @@
 const TEMPLATE = {
-    SOCIALS_TEMPLATE: `<div id="share-socials-container">
-    <div class="share-socials share-facebook">
-        <span><i class="icon-facebook"></i></span><span class="text">Chia sẻ</span>
-        </div>
-        <div class="share-socials share-zalo zalo-share-button"
-            data-href=""
-            data-oaid="579745863508352884"
-            data-layout="1"
-            data-color="blue"
-            data-customize="true"
-        >
-            <span class="zalo">Zalo</span><span class="text">Chia sẻ</span>
-        </div>
-        <div class="share-socials share-more">
-            <span> <i class="more-share"></i> </span><span>Nhiều hơn</span>
-        </div>
-    </div>`,
-
     ALL_MAPS: `<!-- ALL MAP -->
 <div id="maps">
     <div class="container map-wrapper">

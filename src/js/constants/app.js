@@ -10,7 +10,8 @@ const APP = {
     DEFAULT_COOKIE_EXPRIES: 0.5, // haft day
     DEFAULT_TIME_TO_SHOW_POPUP: 15000, // 15 seconds
     DEFAULT_KEY_OF_COOKIE_POPUP_SUFFIXES: 'popup-ads', // set default cookie popup ads
-    CONTACT_SLUG: 'lien-he'
+    CONTACT_SLUG: 'lien-he',
+    DEFAULT_POPUP_IMG_URL: 'https://khoitaodoanhnghiep.com/wp-content/uploads/2021/04/qc_mien-phi.png',
 };
 
 export default APP;

@@ -62,6 +62,7 @@ export default class Form {
     resetForm = () => {
         $(`.${this.elementPrefixId}-form :input`).val('');
         $(`#${this.elementPrefixId}-text-btn`).text('Gửi yêu cầu');
+        APP.PRICE_TITLE = '';
     }
 
     // check every field input not empty

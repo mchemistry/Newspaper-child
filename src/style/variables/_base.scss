@@ -77,9 +77,10 @@ $close-btn-dimension: 20px;
 $close-btn-color: $white;
 
 //accordion
-$accordion-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 $accordion-title-color-active: #2D4CC9;
 $accordion-border-active: 1px solid rgb(230, 230, 230);;
 $accordion-text-color: #333;
 $accordion-title-font-size: 16px;
 $accordion-text-font-size: 14px;
+$accordion-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+$accordion-box-shadow-active: rgba(39, 46, 142, 0.12) 0px 1px 3px, rgba(39, 46, 142, 0.24) 0px 1px 2px;

@@ -1,13 +1,11 @@
-import TEMPLATE from '../constants/template';
-
 export default class ShareSocials {
     constructor() {
         this.init();
     }
 
-  isPost = () => {
-      return $('.td-post-title').length;
-  };
+    // isPost = () => {
+    //     return $('.td-post-title').length;
+    // };
 
   listenButtonShareClick = () => {
       // more share click available on mobile and tablet
@@ -41,10 +39,10 @@ export default class ShareSocials {
   };
 
   init = () => {
-      console.log('ok');
-      if (this.isPost()) {
-          $('.td-post-title').after(TEMPLATE.SOCIALS_TEMPLATE);
-          this.listenButtonShareClick();
-      }
+      //   if (this.isPost()) {
+      //       $('.td-post-title').after(TEMPLATE.SOCIALS_TEMPLATE);
+      //       this.listenButtonShareClick();
+      //   }
+      this.listenButtonShareClick();
   };
 }

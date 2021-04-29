@@ -42,12 +42,9 @@
             }
         }
     }
-}
-
-@media screen and (max-width: 768px) {
-    .share-more {
-        display: flex;
+    @media screen and (max-width: 768px) {
+        .share-more {
+            display: flex !important;
+        }
     }
 }
-
-;
