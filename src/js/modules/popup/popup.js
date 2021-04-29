@@ -15,16 +15,6 @@ export default class Popup {
         this.poupForm.init();
     }
 
-    set urlImageAds(url) {
-        // eslint-disable-next-line no-underscore-dangle
-        this._urlImageAds = url;
-    }
-
-    get urlImageAds() {
-        // eslint-disable-next-line no-underscore-dangle
-        return this._urlImageAds;
-    }
-
     // handle button close popup click
     handleButtonCloseClick = () => {
         closePopUp(0, null);

@@ -239,16 +239,22 @@ form[form-benzene].pop-up-form {
 
     label {
         font-size: 16px;
-        // &:not(:nth-child(1))
+        @include text-linear($deg: 45deg, $color1: #6f0202, $color2: #0b12ef);
         margin-top: 1.5rem;
+        font-weight: 600;
     }
 
     button[type='submit'] {
         height: 2.5rem;
         margin-top: 2.5rem;
-
+        background-color: $primary;
+        &:hover {
+            box-shadow: $btn-box-shadow-popup;
+        }
         span {
             font-size: 15px;
+            color: #ffb4d9;
+            font-weight: 600;
         }
     }
 }
