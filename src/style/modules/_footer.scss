@@ -102,8 +102,21 @@
 }
 
 @media screen and (max-width: 660px) {
+    .inner-footer {
+        padding: 0 !important;
+    }
     .footer-items {
         width: 100%;
+        padding: 12px !important;
+    }
+    .info-footer {
+        flex-direction: column;
+        align-items: center;
+        > div {
+            width: 100% !important;
+            padding: 12px 0;
+            margin: 0 !important;
+        }
     }
 }
 

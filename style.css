@@ -153,6 +153,15 @@ Version:        9.0c
   margin: 0;
 }
 
+/* Custom sidebar*/
+.td-ss-main-sidebar .block-title {
+  border-bottom: 2px solid #4e3284;
+}
+.td-ss-main-sidebar .block-title span {
+  background-color: 2px solid #4e3284;
+}
+
+
 /* .td_block_7 .td_module_wrap {
   display: flex;
 }

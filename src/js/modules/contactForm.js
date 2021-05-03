@@ -12,7 +12,7 @@ export default class Form {
         this.timeOut = timeOut;
         this.urlContactApi = urlContactApi;
         this.form = $(`.${this.elementPrefixId}-form`);
-        this.noti = new Notification(700000);
+        this.noti = new Notification(timeOut);
         this.contact = {};
     }
 

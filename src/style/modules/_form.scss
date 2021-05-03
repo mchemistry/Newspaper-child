@@ -239,9 +239,7 @@ form[form-benzene].pop-up-form {
 
     label {
         font-size: 16px;
-        @include text-linear($deg: 45deg, $color1: #6f0202, $color2: #0b12ef);
         margin-top: 1.5rem;
-        font-weight: 600;
     }
 
     button[type='submit'] {
@@ -253,7 +251,6 @@ form[form-benzene].pop-up-form {
         }
         span {
             font-size: 15px;
-            color: #ffb4d9;
             font-weight: 600;
         }
     }

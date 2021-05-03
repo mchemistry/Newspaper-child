@@ -9,7 +9,7 @@ export default class ShareSocials {
 
   listenButtonShareClick = () => {
       // more share click available on mobile and tablet
-      $('.more-share').click(() => {
+      $('.share-more').click(() => {
           if (navigator.share) {
               navigator
                   .share({

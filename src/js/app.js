@@ -20,11 +20,13 @@ listenDOMLoaded(() => {
     // pricePopUpAds.init();
 
     const regCompanyButtons = new HandleButtonsPrice('company', PRICING_TITLE.reg_company);
+    const changeInfoCompanyButtons = new HandleButtonsPrice('company-info', PRICING_TITLE.company_info);
     regCompanyButtons.init();
+    changeInfoCompanyButtons.init();
 
     // append map to body
     appendMaps();
-
+    // console.log('okie');
     // init accordion
     initAccordion();
 });
