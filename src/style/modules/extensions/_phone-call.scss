@@ -1,0 +1,119 @@
+#phone-call {
+    width: 40px;
+    height: 40px;
+    right: 6px;
+    bottom: 58px;
+    background: #10b418;
+    position: fixed;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 99;
+  display: inline-block;
+  line-height: 65px;
+}
+
+#phone-call:before {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: -10px;
+    left: -10px;
+    background-color: #10b418;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    opacity: 0.6;
+    -webkit-animation: pulse 1s ease-out;
+    animation: pulse 1.8s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+    }
+    25% {
+        -webkit-transform: scale(0.3);
+        opacity: 1;
+    }
+    50% {
+        -webkit-transform: scale(0.6);
+        opacity: .6;
+    }
+    75% {
+        -webkit-transform: scale(0.9);
+        opacity: .3;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    25% {
+        transform: scale(0.3);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.6);
+        opacity: .6;
+    }
+    75% {
+        transform: scale(0.9);
+        opacity: .3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+#zalo-call {
+    position: fixed;
+    bottom: 108px;
+    right: 6px;
+    background-color: $zalo-bg-color;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    .zalos:before {
+        position: absolute;
+        content: 'Zalo';
+        font-size: 10px;
+        color: $zalo-bg-color;
+        font-weight: 900;
+        background-color: $white;
+        text-align: center;
+        padding-top: 2px;
+        box-sizing: border-box;
+        height: 24px;
+        width: 24px;
+        border-radius: 99px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-style: normal;
+    }
+    .zalos:after {
+        position: absolute;
+        background-color: $white;
+        height: 8px;
+        width: 10px;
+        bottom: 8px;
+        left: 14px;
+        display: inline-block;
+        content: '';
+        transform: skew(310deg);
+    }
+}
