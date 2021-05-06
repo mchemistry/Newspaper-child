@@ -4,10 +4,11 @@ import Popup from './popup';
 
 export default class PopupWithCookie extends Popup {
     constructor(imgUrl, cookieKey,
-        expires = APP.DEFAULT_COOKIE_EXPRIES) {
+        expires = APP.DEFAULT_COOKIE_EXPRIES, timeToShowPopUp) {
         super(imgUrl);
         this.cookieKey = cookieKey;
         this.expires = expires;
+        this.timeToShowPopUp = timeToShowPopUp;
     }
 
     // set cookie if cookie key is exist
@@ -17,16 +18,18 @@ export default class PopupWithCookie extends Popup {
         }
     };
 
-    // show popup
-    show = () => {
-        if (
-            typeof this.checkCookieIsExpired() === 'undefined'
-            && this.popupAdsContainer.is(':hidden')
-        ) {
-            this.popupAdsContainer.css('display', 'flex');
-            setTimeout(() => {
+    // check cookie is exist or expired
+    checkCookieIsExpired = () => {
+        return Cookies.get(this.cookieKey);
+    };
+
+    // auto show popup
+    autoShowPopup = () => {
+        const _self = this;
+        _self.show(function () {
+            if (_.isUndefined(_self.checkCookieIsExpired())) {
                 this.popupAdsContainer.css('display', 'flex');
-            }, this.timeToShowPopUp);
-        }
+            }
+        });
     };
 }

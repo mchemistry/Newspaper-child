@@ -1,6 +1,8 @@
 import closePopUp from '../../utils/closePopUp';
 import FormPopup from '../contactForm';
 import APP from '../../constants/app';
+import appendToBody from '../../utils/appendToBody';
+import TEMPLATE from '../../constants/template';
 
 export default class Popup {
     constructor(urlImage = APP.DEFAULT_POPUP_IMG_URL) {
@@ -26,10 +28,15 @@ export default class Popup {
     };
 
     // show popup
-    show = () => {
+    show = (cb) => {
+        appendToBody('/', TEMPLATE.POPUP, null);
         this.setImgForPopup();
         if (this.popupAdsContainer.is(':hidden')) {
-            this.popupAdsContainer.css('display', 'flex');
+            if (_.isFunction(cb)) {
+                cb();
+            } else {
+                this.popupAdsContainer.css('display', 'flex');
+            }
         }
     };
 }

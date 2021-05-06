@@ -26,6 +26,12 @@ const getPlugins = () => {
         new webpack.HotModuleReplacementPlugin(),
         new FriendlyErrorsWebpackPlugin({
             clearConsole: true,
+        }),
+        new webpack.ProvidePlugin({
+            _: 'underscore'
+        }),
+        new webpack.ProvidePlugin({
+            jQuery: 'jQuery'
         })
     ];
     htmlFileNames.forEach((filename) => {

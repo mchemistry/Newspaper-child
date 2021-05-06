@@ -35,6 +35,7 @@ export default class PopUpAds {
         this.btnPopupClose.click(() => {
             this.btnPopupClose.parent().hide();
             this.setCookieForPopUp();
+            // eslint-disable-next-line no-console
             console.log(Cookies.get(this.cookie_key));
         });
     }

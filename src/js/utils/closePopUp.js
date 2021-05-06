@@ -7,7 +7,7 @@ const closePopUp = (eq, cb) => {
         buttonClose.parents().eq(eq).hide();
     });
 
-    if (typeof cb === 'function') {
+    if (_.isFunction(cb)) {
         cb();
     }
 };

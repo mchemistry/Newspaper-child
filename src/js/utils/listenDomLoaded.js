@@ -1,7 +1,10 @@
+// listen DOM loaded
 const listenDOMLoaded = (cb) => {
     // eslint-disable-next-line no-unused-vars
     jQuery(document).ready(($) => {
-        cb();
+        if (_.isFunction(cb)) {
+            cb();
+        }
     });
 };
 

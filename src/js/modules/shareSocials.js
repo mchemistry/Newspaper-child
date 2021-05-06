@@ -2,7 +2,6 @@ export default class ShareSocials {
     constructor() {
         this.init();
     }
-
     // isPost = () => {
     //     return $('.td-post-title').length;
     // };
