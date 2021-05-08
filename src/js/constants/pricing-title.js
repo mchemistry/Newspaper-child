@@ -1,4 +1,4 @@
-const imgSrcPrefix = i => `https://khoitaodoanhnghiep.com/wp-content/uploads/2021/05/qc_${i}.png`;
+const imgSrcPrefix = i => `https://khoitaodoanhnghiep.com/wp-content/uploads/2021/05/qc-${i}.png`;
 const priceTitle = (name, price) => `Đã lựa chọn gói ${name} giá: ${price}Đ'`;
 
 const convertData = (el, index) => {

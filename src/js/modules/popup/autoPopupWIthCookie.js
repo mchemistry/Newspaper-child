@@ -4,9 +4,13 @@ import Popup from './popup';
 import closePopUp from '../../utils/closePopUp';
 
 export default class PopupWithCookie extends Popup {
-    constructor(imgUrl, cookieKey,
-        expires = APP.DEFAULT_COOKIE_EXPRIES, timeToShowPopUp,
-        path = '/') {
+    constructor(
+        imgUrl,
+        cookieKey,
+        expires = APP.DEFAULT_COOKIE_EXPRIES,
+        timeToShowPopUp,
+        path = '/'
+    ) {
         super(imgUrl);
         this.cookieKey = cookieKey;
         this.expires = expires;

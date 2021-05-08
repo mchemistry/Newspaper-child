@@ -26,9 +26,20 @@ export default class Popup {
         return this.popupAdsContainer.css('display') == 'none';
     }
 
+
     // set image for popup
     setImgForPopup = () => {
+        const notInclude = ['12.', '13.', '14.'];
+        const check = notInclude.some(el => this.urlImageAds.includes(el));
         this.imgOfPopup.attr('src', this.urlImageAds);
+        this.imgOfPopup.css('object-fit', 'cover');
+        if (!check) {
+            this.imgOfPopup.attr('height', '240px');
+            this.imgOfPopup.attr('width', '340px');
+        } else {
+            this.imgOfPopup.attr('height', '280px');
+            this.imgOfPopup.attr('width', 'auto');
+        }
     };
 
     // visible popup
