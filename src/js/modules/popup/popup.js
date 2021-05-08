@@ -1,8 +1,7 @@
 import closePopUp from '../../utils/closePopUp';
 import FormPopup from '../contactForm';
 import APP from '../../constants/app';
-import appendToBody from '../../utils/appendToBody';
-import TEMPLATE from '../../constants/template';
+
 
 export default class Popup {
     constructor(urlImage = APP.DEFAULT_POPUP_IMG_URL) {
@@ -22,21 +21,29 @@ export default class Popup {
         closePopUp(0, null);
     };
 
+    // check popup is display none
+    isPopupNotVisible = () => {
+        return this.popupAdsContainer.css('display') == 'none';
+    }
+
     // set image for popup
     setImgForPopup = () => {
         this.imgOfPopup.attr('src', this.urlImageAds);
     };
 
+    // visible popup
+    visiblePopup = () => {
+        this.popupAdsContainer.css('display', 'flex');
+    }
+
     // show popup
     show = (cb) => {
-        appendToBody('/', TEMPLATE.POPUP, null);
         this.setImgForPopup();
-        if (this.popupAdsContainer.is(':hidden')) {
-            if (_.isFunction(cb)) {
-                cb();
-            } else {
-                this.popupAdsContainer.css('display', 'flex');
-            }
+        if (_.isFunction(cb)) {
+            cb();
+        } else {
+            // eslint-disable-next-line no-unused-expressions
+            this.isPopupNotVisible && this.visiblePopup();
         }
     };
 }

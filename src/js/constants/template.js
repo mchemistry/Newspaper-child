@@ -356,7 +356,7 @@ const TEMPLATE = {
     
     </div>
 </div>
-<!-- END ALL MAP -->`,
+               <!-- END ALL MAP -->`,
     POPUP: `
     <div class="price-popup-ads" id="auto-popup-ads-benzene">
     <i class="close-popup-btn"></i>

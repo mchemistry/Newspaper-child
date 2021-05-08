@@ -21,8 +21,4 @@ export default class HandleButtonPrices {
             });
         });
     }
-
-    init = () => {
-        this.listenButtonPriceClick();
-    }
 }

@@ -3,12 +3,15 @@ import Form from './modules/contactForm';
 import ShareSocials from './modules/shareSocials';
 // import PopUpAds from './modules/ads';
 import appendMaps from './utils/appendMaps';
-import AutoPopup from './modules/popup/autoPopupWIthCookie';
+// import AutoPopup from './modules/popup/autoPopupWIthCookie';
 import initAccordion from './modules/accordion';
 import HandleButtonsPrice from './modules/handleButtonsPrice';
 import PRICING_TITLE from './constants/pricing-title';
+import appendToBody from './utils/appendToBody';
+import TEMPLATE from './constants/template';
 
 listenDOMLoaded(() => {
+    appendToBody('/', TEMPLATE.POPUP, null);
     const footerForm = new Form('footer');
     const contactForm = new Form('contact');
     footerForm.init();
@@ -18,13 +21,25 @@ listenDOMLoaded(() => {
     // eslint-disable-next-line no-unused-vars
     // const pricePopUpAds = new PopUpAds('price');
     // pricePopUpAds.init();
-    const autoPopup = new AutoPopup('https://i.ibb.co/VvQWrL1/GI-1100-000-D.png', 'main', 0.5, 1000);
-    autoPopup.autoShowPopup();
+    // const autoPopup = new AutoPopup(
+    //     'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
+    //     'main',
+    //     0.5,
+    //     3000,
+    //     '/lien-he.html'
+    // );
+    // autoPopup.autoShowPopup();
 
-    const regCompanyButtons = new HandleButtonsPrice('company', PRICING_TITLE.reg_company);
-    const changeInfoCompanyButtons = new HandleButtonsPrice('company-info', PRICING_TITLE.company_info);
-    regCompanyButtons.init();
-    changeInfoCompanyButtons.init();
+    const regCompanyButtons = new HandleButtonsPrice(
+        'company',
+        PRICING_TITLE.reg_company
+    );
+    const changeInfoCompanyButtons = new HandleButtonsPrice(
+        'company-info',
+        PRICING_TITLE.company_info
+    );
+    regCompanyButtons.listenButtonPriceClick();
+    changeInfoCompanyButtons.listenButtonPriceClick();
 
     // append map to body
     appendMaps();

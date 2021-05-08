@@ -5,11 +5,10 @@ const closePopUp = (eq, cb) => {
 
     buttonClose.click(() => {
         buttonClose.parents().eq(eq).hide();
+        if (_.isFunction(cb)) {
+            cb();
+        }
     });
-
-    if (_.isFunction(cb)) {
-        cb();
-    }
 };
 
 export default closePopUp;

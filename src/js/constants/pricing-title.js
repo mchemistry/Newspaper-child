@@ -1,80 +1,80 @@
+const imgSrcPrefix = i => `https://khoitaodoanhnghiep.com/wp-content/uploads/2021/05/qc_${i}.png`;
+const priceTitle = (name, price) => `Đã lựa chọn gói ${name} giá: ${price}Đ'`;
+
+const convertData = (el, index) => {
+    return {
+        url_img: imgSrcPrefix(index + 1),
+        title: priceTitle(el.name, el.price)
+    };
+};
+
+const regCompany = [
+    {
+        name: 'THÀNH LẬP DOANH NGHIỆP',
+        price: '1.100.000'
+    },
+    {
+        name: 'THÀNH LẬP DOANH NGHIỆP',
+        price: '2.700.000'
+    },
+    {
+        name: 'THÀNH LẬP DOANH NGHIỆP',
+        price: '3.800.000'
+    },
+];
+
+const companyInfoData = [
+    {
+        name: 'GIẢI THỂ KINH DOANH',
+        price: '1.500.000'
+    },
+    {
+        name: 'THAY ĐỔI TÊN DOANH NGHIỆP',
+        price: '850.000'
+    },
+    {
+        name: 'THAY ĐỔI TRỤ SỞ CHÍNH',
+        price: '850.000'
+    },
+    {
+        name: 'THAY ĐỔI NGƯỜI ĐẠI DIỆN PHÁP LUẬT',
+        price: '650.000'
+    },
+    {
+        name: 'THÔNG BÁO TẠM NGỪNG KINH DOANH',
+        price: '500.000'
+    },
+    {
+        name: 'THAY ĐỔI VỐN ĐIỀU LỆ',
+        price: '500.000'
+    },
+    {
+        name: 'THAY ĐỔI CHỦ SỞ HỮU CÔNG TY',
+        price: '500.000'
+    },
+    {
+        name: 'BỔ SUNG THAY ĐỔI NGÀNH NGHỀ KINH DOANH',
+        price: '500.000'
+    },
+    {
+        name: 'THAY ĐỔI CỔ ĐÔNG SÁNG LẬP',
+        price: '500.000'
+    },
+    {
+        name: 'THAY ĐỔI NỘI DUNG ĐĂNG KÝ THUẾ',
+        price: '500.000'
+    },
+    {
+        name: 'THAY ĐỔI THÔNG TIN NGÂN HÀNG',
+        price: '500.000'
+    },
+];
+
+
 const PRICING_TITLE = {
     // pricing for register company
-    reg_company: [
-        {
-            url_img:
-        'https://khoitaodoanhnghiep.com/wp-content/uploads/2021/04/GIA-1100.000D.png',
-            title: 'Đã lựa chọn gói khởi tạo doanh nghiệp giá: 1.100.000Đ',
-        },
-        {
-            url_img:
-        'https://khoitaodoanhnghiep.com/wp-content/uploads/2021/04/GIA-2.700000D.png',
-            title: 'Đã lựa chọn gói khởi tạo doanh nghiệp giá: 2.700.000Đ',
-        },
-        {
-            url_img:
-        'https://khoitaodoanhnghiep.com/wp-content/uploads/2021/04/GIA-3.800000D.png',
-            title: 'Đã lựa chọn gói khởi tạo doanh nghiệp giá: 3.800.000Đ',
-        },
-    ],
+    reg_company: regCompany.map((el, index) => convertData(el, index + 11)),
     // pricing for change info company
-    company_info: [
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title: 'Đã lựa chọn gói "THAY ĐỔI TÊN DOANH NGHIỆP" giá: 850.000Đ',
-        },
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title: 'Đã lựa chọn gói "THAY ĐỔI TRỤ SỞ CHÍNH" giá: 850.000Đ',
-        },
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title:
-        'Đã lựa chọn gói "THAY ĐỔI NGƯỜI ĐẠI DIỆN PHÁP LUẬT" giá: 850.000Đ',
-        },
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title: 'Đã lựa chọn gói "THÔNG BÁO TẠM NGỪNG KINH DOANH" giá: 500.000Đ',
-        },
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title: 'Đã lựa chọn gói "THAY ĐỔI VỐN ĐIỀU LỆ" giá: 500.000Đ',
-        },
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title: 'Đã lựa chọn gói "THAY ĐỔI CHỦ SỞ HỮU CÔNG TY" giá: 500.000Đ',
-        },
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title: 'Đã lựa chọn gói "BỔ SUNG NGÀNH NGHỀ KINH DOANH" giá: 500.000Đ',
-        },
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title: 'Đã lựa chọn gói "THAY ĐỔI CỔ ĐÔNG SÁNG LẬP" giá: 500.000Đ',
-        },
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title: 'Đã lựa chọn gói "THAY ĐỔI NỘI DUNG ĐĂNG KÝ THUẾ" giá: 500.000Đ',
-        },
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title: 'Đã lựa chọn gói "THAY ĐỔI THÔNG TIN NGÂN HÀNG" giá: 500.000Đ',
-        },
-        {
-            url_img:
-        'https://i.ibb.co/VvQWrL1/GI-1100-000-D.png',
-            title: 'Đã lựa chọn gói "GIẢI THỂ KINH DOANH giá: 1.500.000Đ',
-        },
-    ],
+    company_info: companyInfoData.map((el, index) => convertData(el, index)),
 };
 export default PRICING_TITLE;
