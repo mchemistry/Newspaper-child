@@ -1,0 +1,47 @@
+table tr td {
+    border: 1px solid #4e3284 !important;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+
+#diff1 tr:nth-child(1) td:nth-child(1) {
+   width: 8%;
+}
+
+#diff1 tr:nth-child(1) td:nth-child(2) {
+   width: 46%;
+}
+
+#diff1 tr:nth-child(2) td:nth-child(1) strong {
+   writing-mode: vertical-lr;
+   text-orientation: mixed;
+ transform: rotate(180deg);
+   text-align: center;
+}
+
+#diff2 tr td {
+    border: 1px solid #4e3284 !important;
+  font-size: 13px;
+    border-collapse: collapse;
+}
+
+#diff2 tr:nth-child(1) td:nth-child(1) {
+   width: 8%;
+}
+
+#diff2 tr:nth-child(1) td:nth-child(2) {
+   width: 46%;
+}
+
+#diff2 tr:nth-child(2) td:nth-child(1) strong {
+   writing-mode: vertical-lr;
+   text-orientation: mixed;
+ transform: rotate(180deg);
+   text-align: center;
+}
+#diff2 tr:nth-child(8) td:nth-child(1) strong {
+   writing-mode: vertical-lr;
+   text-orientation: mixed;
+ transform: rotate(180deg);
+   text-align: center;
+}
