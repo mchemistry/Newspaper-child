@@ -9,11 +9,15 @@ import HandleButtonsPrice from './modules/handleButtonsPrice';
 import PRICING_TITLE from './constants/pricing-title';
 import appendToBody from './utils/appendToBody';
 import TEMPLATE from './constants/template';
+import inputWithSearch from './modules/search';
 
 listenDOMLoaded(() => {
     appendToBody('/', TEMPLATE.POPUP, null);
     const footerForm = new Form('footer');
     const contactForm = new Form('contact');
+    // eslint-disable-next-line new-cap
+    const searchInput = new inputWithSearch('search-career', 'career', null);
+    searchInput.search();
     footerForm.init();
     contactForm.init();
     // eslint-disable-next-line no-unused-vars

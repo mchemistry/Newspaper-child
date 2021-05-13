@@ -31,7 +31,8 @@ const getPlugins = () => {
             _: 'underscore'
         }),
         new webpack.ProvidePlugin({
-            jQuery: 'jQuery'
+            jQuery: 'jquery',
+            $: 'jquery'
         })
     ];
     htmlFileNames.forEach((filename) => {

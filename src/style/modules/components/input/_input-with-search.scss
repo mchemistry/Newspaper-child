@@ -16,10 +16,10 @@
             border: 1px solid $secondary;
             color: $secondary;
         }
-        &:focus-within input {
+        &:focus-within #search {
             color: $secondary;
         }
-        input {
+        #search {
             border-radius: 4px;
             height: 36px;
             padding-left: 10px;
