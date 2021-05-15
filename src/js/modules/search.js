@@ -1,4 +1,5 @@
 // import randomText from '../utils/randomWithTimeOut';
+import nonAccentVietnamese from '../utils/nonAccentVietnamese';
 
 export default class InputWithSearch {
     constructor(inputClassName, tableId, suggestOptions) {
@@ -26,11 +27,12 @@ export default class InputWithSearch {
   search = () => {
       const _self = this;
       $(`.${_self.inputClassName}`).on('keyup', function () {
-          const originalInputVal = $(this).val();
+          const originalInputVal = nonAccentVietnamese($(this).val());
           const inputVal = originalInputVal.toLowerCase();
           // eslint-disable-next-line array-callback-return
           $(`#${_self.tableId} tr:not(:nth-child(1))`).filter(function () {
-              $(this).toggle($(this).text().toLowerCase().indexOf(inputVal) > -1);
+              const isNotIncludeInputText = nonAccentVietnamese($(this).text()).toLowerCase().indexOf(inputVal) > -1;
+              $(this).toggle(isNotIncludeInputText);
           });
           if (originalInputVal !== '') {
               _self.innerResult(_self.countRow(), originalInputVal);
