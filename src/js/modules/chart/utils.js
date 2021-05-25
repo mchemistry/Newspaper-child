@@ -1,5 +1,4 @@
-const possitiveColor = '#009933';
-const negativeColor = '#f00';
+import { possitiveColor, negativeColor } from './const';
 
 const Utils = {
     convertDataToColor: data => data.map(number => (number >= 0 ? possitiveColor : negativeColor)),

@@ -1,4 +1,4 @@
-// import listenDOMLoaded from './utils/listenDomLoaded';
+import listenDOMLoaded from './utils/listenDomLoaded';
 // import Form from './modules/contactForm';
 // import ShareSocials from './modules/shareSocials';
 // // import PopUpAds from './modules/ads';
@@ -56,9 +56,12 @@
 
 
 // eslint-disable-next-line no-unused-vars
-import Chart from './modules/chart/index';
+import RenderChart from './modules/chart/index';
 // eslint-disable-next-line no-unused-vars
 // import GGAPI from './modules/ggSheet';
 
-
+const chart1 = new RenderChart('myChart', 'Trang Tính2');
+listenDOMLoaded(() => {
+    chart1.render();
+});
 window.$ = jQuery;

@@ -2,52 +2,63 @@
 // <block:config:0>
 import Utils from './utils';
 
-const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 0, 5, 1, 3],
-        backgroundColor: Utils.convertDataToColor([12, 19, 3, 5, 1, 3]),
-    }]
+const data = (items) => {
+    const labels = items.map(item => Utils.filterDate(item['Ngày']));
+    const dataGold = items.map(item => Number(Utils.filterDate(item['Mua/Bán(tấn)'])));
+    const dataSetup = {
+        labels,
+        datasets: [{
+            label: 'Tấn',
+            data: dataGold,
+            backgroundColor: Utils.convertDataToColor(dataGold),
+        }]
+    };
+    return dataSetup;
 };
 
 
-const config = {
-    type: 'bar',
-    data,
-    options: {
-        layout: {
-            padding: {
-                left: 0,
-                right: 0,
-                top: 15,
-                bottom: 0
-            }
-        },
-        responsive: false,
-        plugins: {
-            legend: {
-                position: 'top',
+const config = (items) => {
+    const finalData = data(items);
+    return {
+        type: 'bar',
+        data: finalData,
+        options: {
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#36A2EB'
+                }
+            },
+            layout: {
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 15,
+                    bottom: 0
+                }
+            },
+            responsive: false,
+            scales: {
+                y: {
+                    max: Math.ceil(Math.max(...finalData.datasets[0].data) + 10),
+                    min: Math.floor(Math.min(...finalData.datasets[0].data) - 10)
+                }
             },
             title: {
                 display: true,
-                text: 'Chart.js Bar Chart'
+                text: 'Lượng vàng mua vào/bán ra theo ngày của Quỹ SPDR(Đơn vị: Tấn)'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
             }
-        },
-        onAnimationComplete() {
-            const { ctx } = this.chart;
-            ctx.font = this.scale.font;
-            ctx.fillStyle = this.scale.textColor;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'bottom';
 
-            this.datasets.forEach(function (dataset) {
-                dataset.bars.forEach(function (bar, i) {
-                    ctx.fillText(i + 1, bar.x, bar.y - 5);
-                });
-            });
         }
-    },
+    };
 };
 // </block:config>
 
