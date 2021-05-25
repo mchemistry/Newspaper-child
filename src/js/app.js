@@ -58,7 +58,7 @@
 // eslint-disable-next-line no-unused-vars
 import Chart from './modules/chart/index';
 // eslint-disable-next-line no-unused-vars
-import GGAPI from './modules/ggSheet';
+// import GGAPI from './modules/ggSheet';
 
 
 window.$ = jQuery;
