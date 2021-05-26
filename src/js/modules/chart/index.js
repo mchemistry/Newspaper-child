@@ -12,6 +12,7 @@ const renderChart = (elementId, nameOfSheet, setting) => ({
         if (elem.length) {
             parser.parse(GoogleSheetUrl, nameOfSheet).then((items) => {
                 // eslint-disable-next-line no-unused-vars
+                console.log(items);
                 const ctx = elem.get(0);
                 const myChart = new Chart(ctx, new Config(items, setting));
                 myChart.render();
