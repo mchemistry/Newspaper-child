@@ -14,7 +14,7 @@
     "author": "izica <artemiztomska@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "chart.js": "^3.3.0",
+        "apexcharts": "^3.26.3",
         "js-cookie": "^2.2.1",
         "public-google-sheets-parser": "^1.2.4"
     },

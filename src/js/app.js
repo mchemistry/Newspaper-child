@@ -57,11 +57,16 @@ import listenDOMLoaded from './utils/listenDomLoaded';
 
 // eslint-disable-next-line no-unused-vars
 import RenderChart from './modules/chart/index';
+import { chart1Setting, chart2Setting } from './modules/chart/const';
 // eslint-disable-next-line no-unused-vars
 // import GGAPI from './modules/ggSheet';
 
-const chart1 = new RenderChart('myChart', 'Trang Tính2');
+
+const chart1 = new RenderChart('myChart1', 'Trang Tính1', chart2Setting);
+const chart2 = new RenderChart('myChart2', 'Trang Tính2', chart1Setting);
+
 listenDOMLoaded(() => {
     chart1.render();
+    chart2.render();
 });
 window.$ = jQuery;

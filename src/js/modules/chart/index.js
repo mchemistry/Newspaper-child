@@ -1,26 +1,24 @@
+// Register the plugin to all charts:
 
-
-import Chart from 'chart.js/auto';
-import * as ChartDataLabels from './plugin';
-// import Utils from './utils';
+import Chart from 'apexcharts';
 import { GoogleSheetUrl, parser } from './const';
 import Config from './config';
 
-Chart.plugins.register(ChartDataLabels);
+// Chart.plugins.register(ChartDataLabels);
 
-const renderChart = (elementId, nameOfSheet) => ({
+const renderChart = (elementId, nameOfSheet, setting) => ({
     render: () => {
-        const el = $(`#${elementId}`);
-        if (el.length) {
+        const elem = $(`#${elementId}`);
+        if (elem.length) {
             parser.parse(GoogleSheetUrl, nameOfSheet).then((items) => {
-                const ctx = el[0].getContext('2d');
                 // eslint-disable-next-line no-unused-vars
-                const myChart = new Chart(ctx, new Config(items));
+                const ctx = elem.get(0);
+                const myChart = new Chart(ctx, new Config(items, setting));
+                myChart.render();
             });
         }
     }
 });
 
-// eslint-disable-next-line no-unused-var
 
 export default renderChart;
