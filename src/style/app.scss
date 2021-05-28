@@ -14,4 +14,9 @@
 
 @import 'icon';
 
-
+.graphic-container {
+    min-height: 300px;
+    max-height: 300px;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
