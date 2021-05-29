@@ -2,11 +2,10 @@
 const Utils = {
     // convertDataToColor: number => (number >= 0 ? possitiveColor : negativeColor),
     filterDate: (date) => {
-        let temp = date.replace(/[Date()]/g, '').split(',').reverse();
-        temp = [temp[1], temp[0], temp[2]];
-        // console.log(temp.join('/'));
+        const temp = date.replace(/[Date()]/g, '').split(',').reverse().join('/');
+        //
         return {
-            x: `${temp.join('/')}`
+            x: `${temp}`
         };
     },
     filterNumber: number => ({ y: Number(number) }),

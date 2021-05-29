@@ -4,11 +4,16 @@ import Utils from './utils';
 import { possitiveColor, negativeColor } from './const';
 
 const data = (items) => {
-    console.log(items);
+    // console.log(items);
+    const precision = 100; // 2 decimals
     const result = items.map((item) => {
+        const randomnum = Math.floor(Math.random() * (10 * precision - -4 * precision) - 4 * precision) / (1 * precision);
         const date = Utils.filterDate(item['Ngày']);
+        // console.log(typeofitem['Ngày'].replace('', ''));
         // console.log(date);
-        const value = Utils.filterNumber(item['Mua/Bán(tấn)']);
+        // const value = Utils.filterNumber(item['Mua/Bán(tấn)']);
+        const value = { y: randomnum };
+        // console.log(randomnum);
         return Object.assign(date, value);
     });
     return result;
@@ -35,8 +40,12 @@ const vi = [{
     }
 }];
 
-const config = (items, setting) => {
-    const finalData = data(items);
+const configs = (items, setting) => {
+    let finalData = data(items);
+    const { length } = finalData;
+
+    finalData = (length > 20 && setting.hasSliced) ? finalData.slice(length - 20, length) : finalData;
+
     const values = finalData.map(value => value.y);
     // console.log(values);
     // console.log(finalData);
@@ -48,20 +57,43 @@ const config = (items, setting) => {
         colors: [({ value, seriesIndex, w }) => (value <= 0 ? negativeColor : possitiveColor)],
         chart: {
             defaultLocale: 'vi',
+            redrawOnParentResize: true,
             locales: vi,
             height: 380,
-            width: 680,
-            type: 'bar',
+            width: '100%',
+            toolbar: { show: true },
+            zoom: {
+                enabled: true,
+                type: 'x',
+            },
+            type: `${setting.type}`,
             animations: {
                 initialAnimation: {
                     enabled: false
                 }
+            },
+            events: {
+                // zoomed(chartContext, config) {
+                //     // eslint-disable-next-line no-param-reassign
+                //     // dataLabels.enabled = true;
+                //     console.log(config.config);
+                //     console.log(config.config.series[config.seriesIndex].name);
+                //     console.log(config.config.series[config.seriesIndex].data[config.dataPointIndex]);
+                // }
+                updated(chartContext, config) {
+                    config.config.dataLabels.enabled = true;
+                    // console.log(config.config);
+                    console.log(config.config.series[0].data);
+                }
             }
+
         },
         plotOptions: {
             bar: {
                 borderRadius: 4,
+                columnWidth: '80%',
                 dataLabels: {
+                    enabled: false,
                     position: 'top', // top, center, bottom
                 },
             }
@@ -73,7 +105,8 @@ const config = (items, setting) => {
             floating: true
         },
         dataLabels: {
-            enabled: true,
+            enabled: length <= 20,
+            enabledOnSeries: true,
             formatter(val) {
                 return setting.unit ? `${val}${setting.unit}` : `${val}`;
             },
@@ -89,10 +122,8 @@ const config = (items, setting) => {
             data: finalData
         }],
         xaxis: {
-            type: 'datetime',
-            // labels: {
-            //     format: 'dd/MM',
-            // }
+            type: 'category',
+            tickPlacement: 'on',
         },
         yaxis: {
             max, min
@@ -100,4 +131,4 @@ const config = (items, setting) => {
     };
 };
 
-export default config;
+export default configs;

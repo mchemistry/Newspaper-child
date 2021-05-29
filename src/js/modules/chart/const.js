@@ -10,7 +10,9 @@ const chart1Setting = {
     fontSize: 8,
     tooltipsTitle: 'Số lượng',
     unit: null,
-    num: 4
+    num: 4,
+    hasSliced: null,
+    type: 'bar'
 };
 
 const chart2Setting = {
@@ -19,6 +21,8 @@ const chart2Setting = {
     tooltipsTitle: 'Số lượng',
     unit: 'Tấn',
     num: 4,
+    hasSliced: null,
+    type: 'bar'
 };
 
 export {
